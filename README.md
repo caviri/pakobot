@@ -26,7 +26,11 @@ In simple terms, we want to check how far can we go just with fine tuning in ter
 
 However, in this project we would like to explore the use of a RAG and perform automatic evaluation of the answers provided. 
 
-## How to run this project?
+## How to run this model?
+
+You can go to [pakobot.streamlit.app](pakobot.streamlit.app) and try the `ft:open-mistral-7b:7ccb0f03:20240630:257f6a77` model if you have a Mistral API Key. 
+
+## How to run this project in local?
 
 We recommend to use Docker. You can build the image with:
 
