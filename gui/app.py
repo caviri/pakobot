@@ -6,7 +6,7 @@ import time
 # mistral_api_key = os.environ.get("MISTRAL_API_KEY")
 # 
 
-def openai_response(messages, mistral_api_key, model="ft:open-mistral-7b:7ccb0f03:20240630:de18ea79" ):
+def openai_response(messages, mistral_api_key, model="ft:open-mistral-7b:7ccb0f03:20240630:257f6a77" ):
     mistral_client = MistralClient(api_key=mistral_api_key)
     response = mistral_client.chat(
         model=model,
@@ -25,7 +25,7 @@ st.sidebar.markdown("For documentation please refer to [github.com/caviri/pakobo
 st.sidebar.markdown("This is an experimental project and should not be used for professional medical practice.")
 st.sidebar.markdown("Project created by [Carlos Vivar Rios](http://www.carlosvivarrios.com) & [Marta Josa Bordell](http://ovellaverda.cat) for the Mistral Fine Tuning Hackathon 2024")
 
-model = st.text_input("Please introduce the fine tuned model", value="ft:open-mistral-7b:7ccb0f03:20240630:de18ea79")
+model = st.text_input("Please introduce the fine tuned model", value="ft:open-mistral-7b:7ccb0f03:20240630:257f6a77")
 mistral_api_key = st.text_input("Please introduce the Mistral API Key ", value="...")
 
 # Initialize chat history
