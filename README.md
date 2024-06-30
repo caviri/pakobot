@@ -28,7 +28,7 @@ However, in this project we would like to explore the use of a RAG and perform a
 
 ## How to run this model?
 
-You can go to [pakobot.streamlit.app](pakobot.streamlit.app) and try the `ft:open-mistral-7b:7ccb0f03:20240630:257f6a77` model if you have a Mistral API Key. 
+You can go to [pakobot.streamlit.app](pakobot.streamlit.app) and try the `ft:open-mistral-7b:7ccb0f03:20240630:257f6a77` model if you have a Mistral API Key. **Take in account that the project is not properly evaluated and most answer are wrong**.
 
 ## How to run this project in local?
 
