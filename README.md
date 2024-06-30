@@ -1,4 +1,8 @@
 # Pakobot
+
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://pakobot.streamlit.app)
+
+
 Project presented in Mistral Fine Tuning Hackathon 2024. 
 
 ![Pakobot GUI](assets/pakobot-gui.png)
