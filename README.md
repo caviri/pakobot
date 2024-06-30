@@ -1,6 +1,8 @@
 # Pakobot
 Project presented in Mistral Fine Tuning Hackathon 2024. 
 
+![Pakobot GUI](assets/pakobot-gui.png)
+
 Pakobot is an assistant that allows Spanish clinicians to obtain and refine an International Code for Diseases based in a decided diagnosis. Currently the official apps only allow string-based search. Using a chatbot interface, clinicians can nail down the desired code.
 
 Pakobot doesn't provide the diagnosis; it just helps to find the correct code. Also, this is a highly experimental project. Do not use in profesional environments and confirm always the code in ICD page.

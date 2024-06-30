@@ -23,7 +23,7 @@ st.sidebar.title("Pakobot")
 st.sidebar.markdown("This projects aims to help doctors in Spain to find the right [International code for diseases v11 (ICD-11)](https://www.who.int/standards/classifications/classification-of-diseases) easily.")
 st.sidebar.markdown("For documentation please refer to [github.com/caviri/pakobot](https://github.com/caviri/pakobot)")
 st.sidebar.markdown("This is an experimental project and should not be used for professional medical practice.")
-st.sidebar.markdown("Project created by [Carlos Vivar Rios](http://www.carlosvivarrios.com) and  presented to the Mistral Fine Tuning Hackathon 2024")
+st.sidebar.markdown("Project created by [Carlos Vivar Rios](http://www.carlosvivarrios.com) & [Marta Josa Bordell](http://ovellaverda.cat) for the Mistral Fine Tuning Hackathon 2024")
 
 model = st.text_input("Please introduce the fine tuned model", value="ft:open-mistral-7b:7ccb0f03:20240630:de18ea79")
 # Initialize chat history
