@@ -2,6 +2,7 @@
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://pakobot.streamlit.app)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/oMNpTxRnvIw?si=IsTJh9onn2XjN1HB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Project presented in Mistral Fine Tuning Hackathon 2024. 
 
