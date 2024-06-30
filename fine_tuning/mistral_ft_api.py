@@ -44,7 +44,7 @@ created_job = client.jobs.create(
     model="open-mistral-7b",
     training_files=[training_data.id],
     hyperparameters=TrainingParameters(
-        training_steps=10,
+        training_steps=100,
         learning_rate=0.0001,
         )
 )

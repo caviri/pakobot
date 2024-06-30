@@ -3,11 +3,11 @@ import os
 from mistralai.client import MistralClient
 import time
 
-mistral_api_key = os.environ.get("MISTRAL_API_KEY")
-mistral_client = MistralClient(api_key=mistral_api_key)
+# mistral_api_key = os.environ.get("MISTRAL_API_KEY")
+# 
 
-def openai_response(messages, model="ft:open-mistral-7b:7ccb0f03:20240630:de18ea79"):
-
+def openai_response(messages, mistral_api_key, model="ft:open-mistral-7b:7ccb0f03:20240630:de18ea79" ):
+    mistral_client = MistralClient(api_key=mistral_api_key)
     response = mistral_client.chat(
         model=model,
         temperature=0,
@@ -26,6 +26,8 @@ st.sidebar.markdown("This is an experimental project and should not be used for 
 st.sidebar.markdown("Project created by [Carlos Vivar Rios](http://www.carlosvivarrios.com) & [Marta Josa Bordell](http://ovellaverda.cat) for the Mistral Fine Tuning Hackathon 2024")
 
 model = st.text_input("Please introduce the fine tuned model", value="ft:open-mistral-7b:7ccb0f03:20240630:de18ea79")
+mistral_api_key = st.text_input("Please introduce the Mistral API Key ", value="...")
+
 # Initialize chat history
 if "messages" not in st.session_state:
     st.session_state.messages = []
@@ -47,7 +49,7 @@ if prompt := st.chat_input("Dime el código para la Leucemia."):
     with st.chat_message("assistant"):
         response = st.empty()  # Create a placeholder for the response
         response_text = ""
-        for word in openai_response(st.session_state.messages):
+        for word in openai_response(st.session_state.messages, mistral_api_key, model=model):
             response_text += word
             response.write(response_text)
         
