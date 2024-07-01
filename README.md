@@ -7,9 +7,9 @@
 
 Project presented in Mistral Fine Tuning Hackathon 2024. 
 
-![Pakobot GUI](assets/pakobot-gui.png)
-
 Pakobot is an assistant that allows Spanish clinicians to obtain and refine an International Code for Diseases based in a decided diagnosis. Currently the official apps only allow string-based search. Using a chatbot interface, clinicians can nail down the desired code.
+
+![Pakobot GUI](assets/pakobot-gui.png)
 
 Pakobot doesn't provide the diagnosis; it just helps to find the correct code. Also, this is a highly experimental project. Do not use in profesional environments and confirm always the code in ICD page.
 
@@ -49,6 +49,21 @@ This should make the tool availble in [http://localhost:8501](http://localhost:8
 
 ## How it was made?
 
+```mermaid
+graph LR
+    A[Data Extraction]
+
+    G[1st Round: Generate Questions]
+    H[2nd Round: Generate Answers]
+
+    J[Fine Tuning]
+
+    N[Streamlit App]
+
+
+    A --> G --> H --> J --> N 
+```
+
 ### Data extraction
 
 We used te ICD official API in order to retrieve the linearized terms. We obtained a dataframe per main category containing the following fields: 
@@ -75,7 +90,7 @@ ICD-11 is licensed under the Creative Commons Attribution-NoDerivs 3.0 IGO licen
 
 In order to generate the training data we performed two rounds of data synthesis using [Nemotron 4 340B Instruct Model by Nvidia](https://build.nvidia.com/nvidia/nemotron-4-340b-instruct). The first round provided 20 questions per row or item in the ICD ontology. Then, a second round took each question and asked the model to provide a feasible answer based in the ground truth context. The result was stored in a `jsonl` file and named as `{ICD-ID}_{DF_Index}.jsonl`.
 
-Nemotron-3 license allows the reuse of the output for training third-party models. 
+Nemotron-4 license allows the reuse of the output for training third-party models. 
 
 A sample of the data can be found in `./data`, while the scripts to generate the synthetica data are located in `./synthetic_data`.
 
@@ -83,7 +98,7 @@ A sample of the data can be found in `./data`, while the scripts to generate the
 
 After generating the synthetic data, we proceded to fine-tune the model using the [MISTRAL API](https://docs.mistral.ai/guides/finetuning/) with the following parameters:
 
-```
+```python
 created_job = client.jobs.create(
     model="open-mistral-7b",
     training_files=[training_data.id],
